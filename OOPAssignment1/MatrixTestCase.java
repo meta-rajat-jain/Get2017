@@ -20,14 +20,14 @@ public class MatrixTestCase {
 				object.addElements(index, jindex, ++k);
 			}
 		}
-		Matrix obj = new Matrix(3, 3);
+		Matrix object2 = new Matrix(3, 3);
 		k = 0;
 		for (int index = 0; index < 3; index++) {
 			for (int jindex = 0; jindex < 3; jindex++) {
-				obj.addElements(index, jindex, ++k);
+				object2.addElements(index, jindex, ++k);
 			}
 		}
-		Matrix result = object.multiplication(obj);
+		Matrix result = object.multiplication(object2);
 		int expected[][] = { { 30, 36, 42 }, { 66, 81, 96 }, { 102, 126, 150 } };
 		Assert.assertArrayEquals(expected, result.data);
 	}
@@ -46,14 +46,14 @@ public class MatrixTestCase {
 				object.addElements(index, jindex, ++k);
 			}
 		}
-		Matrix obj = new Matrix(2, 3);
+		Matrix object = new Matrix(2, 3);
 		k = 0;
 		for (int index = 0; index < 2; index++) {
 			for (int jindex = 0; jindex < 3; jindex++) {
-				obj.addElements(index, jindex, ++k);
+				object2.addElements(index, jindex, ++k);
 			}
 		}
-		Matrix result = object.multiplication(obj);
+		Matrix result = object.multiplication(object2);
 		int expected[][] = { { 1, 2, 3 }, { 4, 5, 6 } };
 		Assert.assertArrayEquals(expected, result.data);
 	}
@@ -71,8 +71,8 @@ public class MatrixTestCase {
 				object.addElements(index, jindex, ++k);
 			}
 		}
-		Matrix obj = object.transpose();
+		Matrix object2 = object.transpose();
 		int expected[][] = { { 1, 4 }, { 2, 5 }, { 3, 6 } };
-		Assert.assertArrayEquals(expected, obj.data);
+		Assert.assertArrayEquals(expected, object2.data);
 	}
 }
