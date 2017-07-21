@@ -6,7 +6,7 @@
 public class Operations {
 	
 	/** The result. */
-	private String result;
+	protected String result;
 
 	/**
 	 * Adds the.
@@ -14,7 +14,7 @@ public class Operations {
 	 * @param values the values
 	 * @return the string
 	 */
-	private String add(double... values){
+	protected String add(double value1,double value2){
 		//this function add the values
 		return result;
 	}
@@ -25,7 +25,7 @@ public class Operations {
 	 * @param values the values
 	 * @return the string
 	 */
-	private String subtract(double... values) {
+	protected String subtract(double value1,double value2) {
 		//this function add the values
 		return result;
 	}
@@ -36,7 +36,7 @@ public class Operations {
 	 * @param values the values
 	 * @return the string
 	 */
-	private String multiply(double... values) {
+	protected String multiply(double value1,double value2) {
 		//this function add the values
 		return result;
 	}
@@ -47,7 +47,7 @@ public class Operations {
 	 * @param values the values
 	 * @return the string
 	 */
-	private String divide(double... values) {
+	protected String divide(double value1,double value2) {
 		//this function add the values
 		return result;
 	}
