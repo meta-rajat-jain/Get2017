@@ -1,0 +1,125 @@
+
+
+Participant's answer
+Reprt A
+Overall Rating Percentage OF OPTION 1IS 0.0%
+ 
+Overall Rating Percentage OF OPTION 2IS 50.0%
+ 
+Overall Rating Percentage OF OPTION 3IS 0.0%
+ 
+Overall Rating Percentage OF OPTION 4IS 50.0%
+ 
+Overall Rating Percentage OF OPTION 5IS 0.0%
+ 
+Report B
+
+For user no1
+mulitselect 3
+  
+feedback 2
+  
+contactNumber 3
+  
+name 34
+  
+For user no2
+mulitselect 3
+  
+feedback 2
+  
+contactNumber 3
+  
+name l2
+  
+
+
+Participant's answer
+Reprt A
+Overall Rating Percentage OF OPTION 1IS 0.0%
+ 
+Overall Rating Percentage OF OPTION 2IS 0.0%
+ 
+Overall Rating Percentage OF OPTION 3IS 50.0%
+ 
+Overall Rating Percentage OF OPTION 4IS 0.0%
+ 
+Overall Rating Percentage OF OPTION 5IS 50.0%
+ 
+Report B
+
+For user no1
+mulitselect null4
+  
+feedback rajat
+  
+contactNumber 93123123
+  
+name rafss
+  
+For user no2
+mulitselect 23
+  
+feedback sdfsf
+  
+contactNumber sasd
+  
+name wqwq
+  
+
+Participant's answer
+Reprt A
+Overall Rating Percentage OF OPTION 1IS 0.0%
+ 
+Overall Rating Percentage OF OPTION 2IS 100.0%
+ 
+Overall Rating Percentage OF OPTION 3IS 0.0%
+ 
+Overall Rating Percentage OF OPTION 4IS 0.0%
+ 
+Overall Rating Percentage OF OPTION 5IS 0.0%
+ 
+Report B
+
+For user no1
+mulitselect 1
+  
+feedback 2asd
+  
+contactNumber sc12
+  
+name qwqwd
+  
+
+Participant's answer 
+Report A
+Overall Rating Percentage OF OPTION 1IS 0.0%
+ 
+Overall Rating Percentage OF OPTION 2IS 0.0%
+ 
+Overall Rating Percentage OF OPTION 3IS 50.0%
+ 
+Overall Rating Percentage OF OPTION 4IS 50.0%
+ 
+Overall Rating Percentage OF OPTION 5IS 0.0%
+ 
+Report B
+
+For user no1
+mulitselect 4
+  
+feedback 3
+  
+contactNumber 4
+  
+name 3
+  
+For user no2
+mulitselect 3
+  
+feedback 4
+  
+contactNumber 3
+  
+name 4
+  
