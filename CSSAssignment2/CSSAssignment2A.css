@@ -1,0 +1,49 @@
+div{
+height:100px;
+width:100px;
+margin:50px;
+
+}
+.box0{
+  background-color: blue;
+  transition:transform,2s;
+}
+.box0:hover{
+  background-color: blue;
+}
+.box1{
+  background-color: blue;
+  transform: rotate(0deg);
+  transition:transform,2s;
+}
+.box1:hover{
+  background-color: red;
+  transform: rotate(360deg);
+}
+.box2{
+  background-color: blue;
+  transform: scale(1,1);
+  transition:transform,2s;
+}
+.box2:hover{
+  background-color: red;
+  transform: scale(2,2);
+}
+.box3{
+  background-color: blue;
+  transform: translate(0,0);
+  transition:transform,2s;
+}
+.box3:hover{
+  background-color: red;
+  transform: translate(20px,20px);
+}
+.box4{
+  background-color: blue;
+  transform: skew(0,0);
+  transition:transform,2s;
+}
+.box4:hover{
+  background-color: red;
+  transform: skew(20deg,20deg);
+}
