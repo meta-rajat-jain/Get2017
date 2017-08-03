@@ -1,0 +1,48 @@
+h1{
+	padding:30px;
+}
+button{
+	background-color:#f0aa49;
+	color:white;
+	height:40px;
+	width:100px;
+	border:1px solid;
+	border-radius:5px;
+	cursor:pointer;
+}
+body{
+	background-color:#e8e8e8;
+}
+input:required {
+    background:hsl(0, 39%, 89%);
+    border:1px solid #999;
+}
+input:optional {
+    background:hsl(300, 50%, 90%);
+    border:1px dotted hsl(180, 50%, 90%);
+}
+input:valid,
+input:in-range {
+   
+    border-color:hsl(0, 39%, 89%);
+}
+
+input:invalid,
+input:out-of-range {
+    border-color:hsl(353, 86%, 57%);
+    
+}
+
+input:placeholder-shown {
+height: 36px;
+width: 380px;
+border:white;
+background:white;
+}
+
+input{
+	border:1px solid black;
+}
+.icon{
+	padding:10px;
+}
