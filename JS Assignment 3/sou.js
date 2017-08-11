@@ -1,0 +1,112 @@
+window.onload = function(){
+	document.getElementById("form").reset();
+    document.getElementById("myDropdown").selectedIndex=-1;
+	 var retrievedObject = localStorage.getItem('testObject');
+
+              console.log('retrievedObject: ' + JSON.parse(retrievedObject));
+			  var retrieveData = JSON.parse(retrievedObject);
+			  
+			  document.getElementById("name").value = retrieveData.name;
+			  document.getElementById("email").value = retrieveData.email;
+			  document.getElementById("myDropdown").value = retrieveData.city;
+			  document.getElementById("contact").value = retrieveData.num;
+			  document.getElementById("organisation").value = retrieveData.org;
+			  document.getElementById("message").value = retrieveData.msg;
+	}
+  function linkhref(){
+  document.getElementById('home').href="HTMLAssignment1.htm";
+  document.getElementById('about').href="home.html";
+  document.getElementById('product').href="home.html";
+  document.getElementById('gallery').href="home.html";
+  document.getElementById('linkJs').href="linkJs.html";
+  }
+  function validate(){
+	var regex1= /^(([\-\w]+)\.?)+@(([\-\w]+)\.?)+\.[a-zA-Z]{2,4}$/;
+	var regex2=/^[a-zA-Z]+$/
+  
+         if( document.myForm.name.value.length < 1 || document.myForm.name.value.length > 20 || !(regex2.test(document.myForm.name.value)))
+         {
+            //alert( "Please provide your name!" );
+            document.myForm.name.focus() ;
+			document.getElementById("name").style.borderColor="red";
+		    return false;
+         }
+		 else{
+		 document.getElementById("name").style.borderColor="blue";
+		 }
+         
+         if( document.myForm.email.value.length < 1 || !(regex1.test(document.myForm.email.value)))
+         {
+           document.getElementById("email").style.borderColor="red";
+            document.myForm.email.focus() ;
+            return false;
+         }
+		 else{
+			document.getElementById("email").style.borderColor="blue";
+		 }
+		 if( document.myForm.organisation.value.length < 1 )
+         {
+    		document.getElementById("organisation").style.borderColor="red";
+            return false;
+         }
+		  else{
+			document.getElementById("organisation").style.borderColor="blue";
+		 }
+         
+         if( isNaN( document.myForm.contact.value ) ||
+         document.myForm.contact.value.length < 5 || document.myForm.contact.value.length > 12 )
+         {	document.getElementById("contact").style.borderColor="red";
+           document.myForm.contact.focus() ;
+            return false;
+         }
+		  else{
+			document.getElementById("contact").style.borderColor="blue";
+		 }
+         
+         
+		 if( document.myForm.message.value.length>250 || document.myForm.message.value.length < 1  )
+         {
+        	document.getElementById("message").style.borderColor="red";
+            return false;
+         }
+		   else{
+			document.getElementById("message").style.borderColor="blue";
+		 }
+         return true ;
+		 
+			 }
+			 function messageFunction(){
+			 if(validate()){
+			  document.getElementById("submit1").innerHTML = "Thanks for contacting us";
+			  var name1 = document.getElementById("name").value;
+			  var email1 = document.getElementById("email").value;
+			  var city1 = document.getElementById("myDropdown").value;
+			  var num1 = document.getElementById("contact").value;
+			  var org1 = document.getElementById("organisation").value;
+			  var msg1 = document.getElementById("message").value;
+			  document.getElementById("form").reset();
+			  
+			  var testObject = { 'name':name1,'email':email1,'city':city1,'num':num1,'org':org1,'msg':msg1};
+
+              // Put the object into storage
+              localStorage.setItem('testObject', JSON.stringify(testObject));
+
+              // Retrieve the object from storage
+             
+			  document.getElementById("form").submit();
+			 }
+			 }
+	function clear1(){
+localStorage.clear();  
+  document.getElementById("name").value = "";
+			  document.getElementById("email").value = "";
+			  document.getElementById("myDropdown").value = "";
+			  document.getElementById("contact").value = "";
+			  document.getElementById("organisation").value = "";
+			  document.getElementById("message").value = "";
+			  
+	}	
+
+		function desc(){
+			 document.getElementById("desc1").value = "selected city is " + document.myForm.city.value ;
+}

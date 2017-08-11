@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <title>HTML1</title>
+  <script src="sou.js"></script> 
+</head>
+
+<body style="margin-left:15%">
+	
+              <table id="header" style="width: 80%; height: 100%;" border"1" frame = "below" cellspacing = "10">
+                   <tr >
+                       <td align="left"><img src="download.png" id="linkJs"  width="55" height="55" alt="">  </td>
+                      <td align="right">
+                           <a href="#" id="home" onclick="linkhref()">Home</a>
+                           <a href="#" id="about" onclick="linkhref()">About</a>
+                           <a href="#" id="product" onclick="linkhref()">Product</a>
+                           <a href="#" id="gallery" onclick="linkhref()">Gallery</a>
+                           <a href="#" id="linkJs" onclick="linkhref()">Contact Us</a>
+                       </td>
+                    </tr>
+                </table>
+               <table id="cover" style="width: 80%; height: 100%;"  cellspacing = "10">
+                    <tr align = "center">
+                        <td>
+                            <img src="html1 asg2.png" width="647" height="189" alt="">
+                        </td>
+                    </tr>
+                </table>
+				
+				
+               <form name="myForm" action="#" id="form" method="post">
+                <table align="center" id = "form"  style="width: 800px; height: 100px; border-spacing:0px;cellpadding:0px" >
+                    <tr>
+                        <td align="center" style="width: 400px;"> Name </td>
+                        <td > <input type="text" id="name" name="name" value="" style="width: 180px;"></td>
+			        </tr>
+                    <tr>
+                        <td align="center" style="width: 400px;">Email-Id</td>
+                        <td style="width: 200px;"> <input type="text" id="email" name="email" value=""></td>
+			        </tr>
+                    <tr>
+                        <td align="center" style="width: 400px;">City</td>
+                        <td style="width: 200px;"><select id="myDropdown" name="city" onclick="desc()">
+						<option value="" disabled selected hidden> </option>
+                            <option value = "Jaipur" >Jaipur</option>
+                            <option value = "Udaipur">Udaipur</option>
+                            <option value = "Delhi">Delhi</option>
+                            <option value = "Mumbai">Mumbai</option>
+                            <option value = "Noida">Noida</option>
+                        </select>
+						<input type ="text" readonly id="desc1" >
+						</td>
+						
+                    <tr>
+                       <td align="center" style="width: 400px;">Organisation Name </td>
+                        <td style="width: 200px;"> <input type="text" id="organisation" name="organisation" value=""></td>
+			        </tr>
+                    <tr>
+                        <td align="center" style="width: 400px;"> Contact Number </td>
+                        <td style="width: 200px;"> <input type="text" id="contact" name="contact" value=""></td>
+			        </tr>
+                    <tr>
+                        <td align="center" style="width: 400px;"> Message </td>
+                        <td style="width: 200px;"> <input type="text" id="message" name="message" value=""></td>
+			        </tr>
+                    <tr colspan="2" >
+                        <td align="center" style="width: 400px;"> <input type="button" id="submission" value="Submit" onclick="messageFunction()"></td>
+						<td style="width: 200px;"><p id = "submit1"></p></td>
+                    </tr>
+					<tr>
+					<td></td>
+					<td><input type="button" id="resubmission" value="Clear" onclick="clear1()"></td>
+					</tr>
+
+	<table style="width: 80%; height: 100%;" border"1" frame = "above" cellspacing = "10">
+	        <tr align="center"><td>@copyright 2016-17 | All right reserved | metacube training</td></tr>
+               </table>
+
+
+                </table>
+                 </form>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      
+      <title>WEBWORKER</title>
+      <script>
+var w;
+var d=new Date();
+			alert(d);
+function startWorker() {
+    if(typeof(Worker) !== "undefined") {
+        if(typeof(w) == "undefined") {
+            w = new Worker("timed.js");
+			
+        }
+        w.onmessage = function(event) {
+            alert(event.data);
+			document.getElementById("result").innerHTML = event.data;
+        };
+  } else {
+        document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Workers...";
+    }
+	
+			
+}
+
+function stopWorker() { 
+    w.terminate();
+    w = undefined;
+}   
+</script>
+   </head>
+   <body>
+     <input type="button" id="b1" onclick="startWorker()" value="start"/>
+	      <input type="button" id="b1" onclick="stopWorker()" value="stop"/>
+	 <p id="result"></p>
+   </body>
+</html>
