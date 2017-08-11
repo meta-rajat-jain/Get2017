@@ -1,0 +1,63 @@
+
+<!Doctype html>
+
+
+<html>
+<head>
+<title>New JS Assignment</title>
+<link href="styles.css" rel="stylesheet" />
+<script>
+function checkData(){
+var str = document.getElementById("inpt").value;
+document.getElementById("result").style.display="block";
+		
+		var prevPos=0;
+		var curPos=0;
+		var curLength=0;
+		while(curPos<str.length){
+			if(str.charAt(prevPos)==str.charAt(curPos)){
+				curPos++;
+				curLength++;
+			}else if(curLength>1){
+				str = str.slice(0,prevPos) + str.slice(curPos);
+				prevPos = prevPos-1>0?prevPos-1:0;
+				curPos = prevPos;
+				curLength=0;
+			}
+			else{
+				prevPos = curPos;
+				curLength=0;
+			}
+		}
+		if(curLength>1){
+			str = str.slice(0,prevPos) + str.slice(curPos,str.length);
+		}
+document.getElementById("result").innerHTML=str;
+}
+
+
+</script>
+</head>
+<body>
+ <header id="header">
+		<div class="right">
+			<nav>
+				<ul>
+					<li><a href="single.html">SingleLinkList</a></li>
+					<li><a href="doubleLinkedList.html">DoubleLinkList</a></li>
+					<li><a href="stack.html">Stack</a></li>
+					<li><a href="queue.html">Queue</a></li>
+					<li><a href="removeDuplicateCharacter.html">RemoveConsChar</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="clear"></div>
+	</header>
+	<section id="cover">
+	<h4>Remove Consecutive Character </h4>
+<label for="inpt">Enter text</label>
+<input type="text" id="inpt" name="inpt" onchange="checkData()">
+<p id="result"></p>
+</section>
+</body>
+</html>
