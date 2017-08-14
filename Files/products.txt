@@ -1,0 +1,23 @@
+123,Levis-Jeans,1500.00
+124,Reebok-sneakers,1700.00
+125,Cargos,2500.00
+1001,Reebok-Sneakers,899.00
+1002,Reebok-Shoes,1499.00
+1003,Reebok-Gym Vest,399.00
+1004,Reebok-Trek Suit,2799.00
+1005,Reebok-Zigtech Shoes,2899.00
+1006,Reebok-TShirt,899.00
+1007,Reebok-Pullover,1999.00
+1008,Reebok-Jacket,1699.00
+1009,Reebok-Wallet,699.00
+1010,Reebok-Shorts,799.00
+1011,Puma-Sneakers,1199.00
+1012,Puma-Shoes,2199.00
+1013,Puma-GymVest,499.00
+1014,Puma-TrekSuit,1699.00
+1015,Puma-Wrist Band,399.00
+1016,Puma-TShirt,799.00
+1017,Puma-Pullover,1899.00
+1018,Puma-Jacket,1799.00
+1019,Puma-Wallet,699.00
+1020,Puma-Shorts,999.00
