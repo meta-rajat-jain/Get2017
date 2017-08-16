@@ -13,6 +13,7 @@ import java.util.Set;
 import com.metacube.Facade.ProductFacade;
 import com.metacube.entity.Product;
 import com.metacube.entity.UserCart;
+import com.metacube.enums.Status;
 
 /**
  * The Class CartController.
@@ -44,11 +45,24 @@ public class CartController {
 	 *
 	 * @param id the id
 	 * @param quantity the quantity
+	 * @return 
 	 */
-	public void addCart(String id,int quantity){
+	public Status addCart(String id,int quantity){
+		Status result = Status.Added;
+		if(pf.searchproduct(id)==Status.NOT_Found){
+		result = Status.NOT_Found;
+		}else{
+		if(userDetails.containsKey(id)){
+		quantity += userDetails.get(id);
 		userDetails.put(id,quantity);
-		cart.setOrderDetail(userDetails);
-	}
+		}else{
+		userDetails.put(id,quantity);
+		}
+		 cart.setOrderDetail(userDetails);
+		}
+		return result;
+		}
+	
 	
 	/**
 	 * Prints the cart.
@@ -67,15 +81,28 @@ public class CartController {
 	 *
 	 * @param id the id
 	 * @param quantity the quantity
+	 * @return 
 	 */
-	public void delCart(String id,int quantity){
-		int updatedQuantity = userDetails.get(id) - quantity;
-		if(updatedQuantity<=0){
-		  userDetails.remove(id);	
-		}else{
-		 userDetails.put(id,updatedQuantity);
+	public Status delCart(String id,int quantity){
+		Status result=Status.Success;
+		if(!userDetails.containsKey(id)){
+		result = Status.NOT_Found;
+		}else {
+		if(quantity<0){
+		/**If quantity becomes less than zero than it's a error**/
+		result = Status.Error_Occured;	
 		}
-	}
+		/**Getting the quantity related to item**/
+		int updatedQuantity = userDetails.get(id) - quantity;
+		if(updatedQuantity<0){
+		/**If quantity becomes less than zero than it's a error**/
+		result = Status.Error_Occured;	
+		}else{	
+		userDetails.put(id,updatedQuantity);
+		}
+		}
+		return result;
+		}
 	
 	/**
 	 * Prints the bill.
