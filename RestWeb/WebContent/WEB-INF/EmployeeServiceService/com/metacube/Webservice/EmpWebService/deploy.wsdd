@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from EmployeeServiceService WSDL service -->
+
+  <service name="EmployeeService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://EmpWebService.Webservice.metacube.com"/>
+      <parameter name="wsdlServiceElement" value="EmployeeServiceService"/>
+      <parameter name="schemaQualified" value="http://EmpWebService.Webservice.metacube.com,http://Entities.Webservice.metacube.com"/>
+      <parameter name="wsdlServicePort" value="EmployeeService"/>
+      <parameter name="className" value="com.metacube.Webservice.EmpWebService.EmployeeService"/>
+      <parameter name="wsdlPortType" value="EmployeeService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://EmpWebService.Webservice.metacube.com" xmlns:retNS="http://EmpWebService.Webservice.metacube.com" xmlns:rtns="http://EmpWebService.Webservice.metacube.com" xmlns:tns="http://EmpWebService.Webservice.metacube.com" name="getEmployees_JSON" qname="operNS:getEmployees_JSON" returnQName="retNS:getEmployees_JSONReturn" returnType="rtns:ArrayOf_xsd_anyType" returnItemQName="tns:item" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://EmpWebService.Webservice.metacube.com" xmlns:retNS="http://EmpWebService.Webservice.metacube.com" xmlns:rtns="http://Entities.Webservice.metacube.com" name="getEmployee" qname="operNS:getEmployee" returnQName="retNS:getEmployeeReturn" returnType="rtns:EmpDetail" soapAction="">
+        <parameter xmlns:pns="http://EmpWebService.Webservice.metacube.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:empNo" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://EmpWebService.Webservice.metacube.com" name="addEmploy" qname="operNS:addEmploy" soapAction="">
+        <parameter xmlns:pns="http://EmpWebService.Webservice.metacube.com" xmlns:tns="http://Entities.Webservice.metacube.com" qname="pns:emp" type="tns:EmpDetail"/>
+      </operation>
+      <operation xmlns:operNS="http://EmpWebService.Webservice.metacube.com" name="deleteEmploy" qname="operNS:deleteEmploy" soapAction="">
+        <parameter xmlns:pns="http://EmpWebService.Webservice.metacube.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:empNo" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="deleteEmploy getEmployees_JSON getEmployee addEmploy"/>
+
+      <typeMapping xmlns:ns="http://EmpWebService.Webservice.metacube.com" qname="ns:&gt;getEmployees_JSONResponse" type="java:com.metacube.Webservice.EmpWebService.GetEmployees_JSONResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://EmpWebService.Webservice.metacube.com" qname="ns:&gt;addEmployResponse" type="java:com.metacube.Webservice.EmpWebService.AddEmployResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://EmpWebService.Webservice.metacube.com" qname="ns:&gt;getEmployeeResponse" type="java:com.metacube.Webservice.EmpWebService.GetEmployeeResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://EmpWebService.Webservice.metacube.com" qname="ns:&gt;getEmployees_JSON" type="java:com.metacube.Webservice.EmpWebService.GetEmployees_JSON" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://EmpWebService.Webservice.metacube.com" qname="ns:&gt;addEmploy" type="java:com.metacube.Webservice.EmpWebService.AddEmploy" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://EmpWebService.Webservice.metacube.com" qname="ns:&gt;deleteEmploy" type="java:com.metacube.Webservice.EmpWebService.DeleteEmploy" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <arrayMapping xmlns:ns="http://EmpWebService.Webservice.metacube.com" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_anyType" type="java:java.lang.Object[]" innerType="cmp-ns:anyType" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://Entities.Webservice.metacube.com" qname="ns:EmpDetail" type="java:com.metacube.Webservice.Entities.EmpDetail" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://EmpWebService.Webservice.metacube.com" qname="ns:&gt;deleteEmployResponse" type="java:com.metacube.Webservice.EmpWebService.DeleteEmployResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://EmpWebService.Webservice.metacube.com" qname="ns:&gt;getEmployee" type="java:com.metacube.Webservice.EmpWebService.GetEmployee" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>
