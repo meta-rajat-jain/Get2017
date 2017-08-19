@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://EmpWebService.Webservice.metacube.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://EmpWebService.Webservice.metacube.com" xmlns:intf="http://EmpWebService.Webservice.metacube.com" xmlns:tns1="http://Entities.Webservice.metacube.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://EmpWebService.Webservice.metacube.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://Entities.Webservice.metacube.com"/>
+   <element name="getEmployees_JSON">
+    <complexType/>
+   </element>
+   <element name="getEmployees_JSONResponse">
+    <complexType>
+     <sequence>
+      <element name="getEmployees_JSONReturn" type="impl:ArrayOf_xsd_anyType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_xsd_anyType">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+   <element name="getEmployee">
+    <complexType>
+     <sequence>
+      <element name="empNo" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getEmployeeResponse">
+    <complexType>
+     <sequence>
+      <element name="getEmployeeReturn" type="tns1:EmpDetail"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addEmploy">
+    <complexType>
+     <sequence>
+      <element name="emp" type="tns1:EmpDetail"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addEmployResponse">
+    <complexType/>
+   </element>
+   <element name="deleteEmploy">
+    <complexType>
+     <sequence>
+      <element name="empNo" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteEmployResponse">
+    <complexType/>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://Entities.Webservice.metacube.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://EmpWebService.Webservice.metacube.com"/>
+   <complexType name="EmpDetail">
+    <sequence>
+     <element name="empName" nillable="true" type="xsd:string"/>
+     <element name="empNo" nillable="true" type="xsd:string"/>
+     <element name="position" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="deleteEmployResponse">
+
+      <wsdl:part element="impl:deleteEmployResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteEmployRequest">
+
+      <wsdl:part element="impl:deleteEmploy" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEmployeeRequest">
+
+      <wsdl:part element="impl:getEmployee" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEmployeeResponse">
+
+      <wsdl:part element="impl:getEmployeeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addEmployRequest">
+
+      <wsdl:part element="impl:addEmploy" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEmployees_JSONResponse">
+
+      <wsdl:part element="impl:getEmployees_JSONResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addEmployResponse">
+
+      <wsdl:part element="impl:addEmployResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEmployees_JSONRequest">
+
+      <wsdl:part element="impl:getEmployees_JSON" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="EmployeeService">
+
+      <wsdl:operation name="getEmployees_JSON">
+
+         <wsdl:input message="impl:getEmployees_JSONRequest" name="getEmployees_JSONRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getEmployees_JSONResponse" name="getEmployees_JSONResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getEmployee">
+
+         <wsdl:input message="impl:getEmployeeRequest" name="getEmployeeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getEmployeeResponse" name="getEmployeeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addEmploy">
+
+         <wsdl:input message="impl:addEmployRequest" name="addEmployRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addEmployResponse" name="addEmployResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteEmploy">
+
+         <wsdl:input message="impl:deleteEmployRequest" name="deleteEmployRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:deleteEmployResponse" name="deleteEmployResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="EmployeeServiceSoapBinding" type="impl:EmployeeService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getEmployees_JSON">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getEmployees_JSONRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getEmployees_JSONResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getEmployee">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getEmployeeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getEmployeeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addEmploy">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addEmployRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addEmployResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteEmploy">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deleteEmployRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deleteEmployResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="EmployeeServiceService">
+
+      <wsdl:port binding="impl:EmployeeServiceSoapBinding" name="EmployeeService">
+
+         <wsdlsoap:address location="http://localhost:8080/RestWeb/services/EmployeeService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

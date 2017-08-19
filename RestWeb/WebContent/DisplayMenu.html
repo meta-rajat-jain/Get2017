@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>
+EmployeeManager
+</title>
+</head>
+<body>
+<form id="form1" action="http://localhost:8080/EmployeeManagement/rest/employeeService/employees/createEmployee/" method="post" >
+Enter ID : <input type="number" id="id" >
+Enter name : <input type="text" id="name" >
+Enter Age : <input type="number" id="age" ><br/><br/>
+<input type="submit" value="Create Employee" /><br/><br/>
+</form>
+
+Enter ID : <input type="number" id="id" ><br/><br/>
+<button>Retreive Employee By Id</button><br/><br/>
+
+
+Enter ID : <input type="number" id="id" ><br/><br/>
+<button>Delete Employee By Id</button><br/><br/>
+
+Enter name : <input type="text" id="name" ><br/><br/>
+<button>Retreive Employee By Name</button><br/><br/>
+
+<form id="form4" action="http://localhost:8080/EmployeeManagement/rest/employeeService/employees/" method="get">
+<input type="submit" value="Get all employees" /><br/><br/>
+</form>	
+</body>
+</html>
