@@ -18,7 +18,7 @@ import java.util.Arrays;
 public class MyArrayList<E> {
 
 	/** The array. */
-	Object[] array = null;
+	Object[] array =  null;
 	
 	/** The max. */
 	static int MAX = 5;
@@ -136,6 +136,7 @@ public class MyArrayList<E> {
 	 * @param element the element
 	 * @return true, if successful
 	 */
+	//To remove Element
 	public boolean removeElement(E element){
 		for(int index = 0;index < getSize() ; index++){
 			if ( (array[index]).equals(element) ){
