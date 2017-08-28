@@ -93,11 +93,13 @@ public class MyHashTable<E, V> {
 	@SuppressWarnings("unchecked")
 	public V getValue(int age, String name) {
 		for (int index = 0; index < roomInfo.length; index++) {
+			if (roomInfo[index] != null){
 			Guest guest = (Guest) ((MyHashNode<E, V>) roomInfo[index])
 					.getValue();
 			if (guest.getName().equals(name) && guest.getAge() == age) {
 				return ((MyHashNode<E, V>) roomInfo[index]).getValue();
-			}
+				}
+			}	
 		}
 		return (V) "none";
 	}
