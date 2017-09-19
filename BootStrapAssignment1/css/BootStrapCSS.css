@@ -1,0 +1,170 @@
+.header1 {
+	background-color: #c36464;
+	color: #ffffff;
+	padding: 20px 0px 15px 0px;
+}
+
+header .container .icon {
+	margin-top: 30px;
+	font-size: 35px;
+}
+
+.user-icon{
+background-color:#F0677C;
+padding:10px;
+font-size:15px;
+border-radius:20px;
+ }
+a {
+	color: #fff;
+}
+
+.active-link a {
+	background-color: #c36464;
+}
+
+.navbar-inverse {
+	border-radius: 0px;
+	min-height: auto;
+	
+}
+.navbar-inverse .row{
+	POSITION: absolute;
+    width: 100%;
+    background: #333;
+    z-index: 10;
+	padding-right:5%;
+}
+#dashboard a{
+    background: #c36464;
+} 
+
+
+.navbar .nav li a {
+	color: #fff;
+    margin: -1px;
+    padding: 16px;
+}
+.layer1 .container hr {
+	border-top: 2px solid #f491a0; 
+	margin-top: 5px;
+}
+.layer1 .container .well {
+	margin: 35px 0px 0px 0px;
+	background-color: #dff0d8;
+	color: #8aab7f;
+}
+
+.layer2 .container .row {
+	margin-top:10px;
+	color: #fff;
+}
+
+.notification {
+	background-color: #b9b739;
+}
+
+.gallery {
+	background-color: #f94c4c;
+	 
+}
+
+.favourite {
+	background-color: #119c7e;
+	
+}
+
+.announcement {
+	background-color: #b739b9;
+	
+}
+
+.layer2 .container .icon {
+	font-size: 30px;
+	border-radius: 50%;
+	border: 2px solid #fff;
+	padding: 10px;
+	color: white;
+}
+
+.panel-body ul {
+	padding-left: 2px;
+	list-style: none;
+}
+
+.left-panel .panel-body .glyphicon {
+	padding: 5px;
+    border: 1px solid grey;
+}
+
+.panel .panel-body ul li a {
+	color: #000;
+}
+
+.panel .panel-body ul li a .label {
+	padding: 5px;
+}
+
+.layer3 .well {
+	background-color: #f2dede;
+	color: #c79292;
+	line-height: 2;
+	padding: 15px 20px;
+}
+.social-buttons {
+	padding: 14px;
+	background-color: #fcf8e3;
+}
+.social-buttons button {
+	border-radius: 0px;
+	color: #fff;
+}
+.btn-fb {
+    background-color: #3B5998;
+}
+
+.btn-gplus {
+    background-color: #DD4B39;
+}
+
+.btn-tw {
+    background-color: #55ACEE;
+}
+
+.btn-li {
+    background-color: #0082CA;
+}
+.layer3.container.row hr {
+	border-top: 2px solid #f491a0; 
+	margin-top: 5px;
+}
+.layer3 .container .row .right-panel .panel-footer {
+	color: #777;
+	padding: 18px;
+}
+
+.layer3 .container .row .right-panel .panel-body {
+	color: #000;
+}
+
+.layer3 .container .row .right-panel .panel-heading {
+	background-color: #dff0d8;
+	color: #74a084;
+	font-size: 15px;
+	padding: 17px;
+}
+
+.layer3 .container .row .right-panel button {
+	border-radius: 0px;
+}
+.view {
+	border-radius: 0px;
+	padding: 5px;
+}
+
+footer {
+	color: #fff;
+	background-color: #c36464;
+	padding: 20px;
+	margin-top: 50px;
+}
