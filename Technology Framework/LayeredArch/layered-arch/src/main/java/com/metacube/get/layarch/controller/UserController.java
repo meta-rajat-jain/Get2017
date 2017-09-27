@@ -14,9 +14,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import com.metacube.get.layarch.dao.user.JdbcUserDao;
-import com.metacube.get.layarch.facade.DefaultUserFacade;
 import com.metacube.get.layarch.facade.UserFacade;
+import com.metacube.get.layarch.facade.BaseFacade;
 import com.metacube.get.layarch.service.DefaultUserService;
 
 /**
@@ -26,14 +25,13 @@ import com.metacube.get.layarch.service.DefaultUserService;
 public class UserController {
 
 	/** The user facade. */
-	UserFacade userFacade;
+	BaseFacade baseFacade;
 
 	/**
 	 * Instantiates a new user controller.
 	 */
 	public UserController() {
-		userFacade = new DefaultUserFacade(new DefaultUserService(
-				new JdbcUserDao()));
+		baseFacade = new UserFacade(new DefaultUserService());
 	}
 
 	/**
@@ -47,7 +45,7 @@ public class UserController {
 	public Response getUsers() {
 
 		return Response.status(Response.Status.OK)
-				.entity(userFacade.getAllUsers()).build();
+				.entity(baseFacade.getAllUsers()).build();
 
 	}
 
@@ -64,7 +62,7 @@ public class UserController {
 	public Response getUser(@PathParam("id") int id) {
 
 		return Response.status(Response.Status.OK)
-				.entity(userFacade.getUserById(id)).build();
+				.entity(baseFacade.getUserById(id)).build();
 
 	}
 
@@ -81,7 +79,7 @@ public class UserController {
 	public Response deleteUsers(@PathParam("id") int id) {
 
 		return Response.status(Response.Status.OK)
-				.entity(userFacade.getUserById(id)).build();
+				.entity(baseFacade.getUserById(id)).build();
 
 	}
 }
