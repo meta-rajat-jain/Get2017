@@ -7,10 +7,12 @@ import { User } from './user';
 
 @Injectable()
 export class LoginService {
-    
+     
     private headers = new Headers({ 'Content-Type': 'application/json' });
     private userUrl = 'http://localhost:8080/Assignment4/rest/product/getUser';
-    constructor(private http: Http) { }
+    constructor(private http: Http) {}
+
+    
     
     getUser(username:string,password:string): Promise<Authentication> {
         const url = `${this.userUrl}/${username}/${password} `;

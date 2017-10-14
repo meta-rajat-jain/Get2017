@@ -38,8 +38,7 @@ public class DefaultProductFacade implements ProductFacade {
 	/**
 	 * Sets the product service.
 	 *
-	 * @param productService
-	 *            the new product service
+	 * @param productService the new product service
 	 */
 	public void setProductService(ProductService productService) {
 		this.productService = productService;
@@ -54,8 +53,7 @@ public class DefaultProductFacade implements ProductFacade {
 	/**
 	 * Instantiates a new default product facade.
 	 *
-	 * @param ProductService
-	 *            the product service
+	 * @param ProductService the product service
 	 */
 	public DefaultProductFacade(ProductService ProductService) {
 		this.productService = ProductService;
@@ -90,8 +88,7 @@ public class DefaultProductFacade implements ProductFacade {
 	/**
 	 * Dto to model.
 	 *
-	 * @param productDto
-	 *            the product dto
+	 * @param productDto the product dto
 	 * @return the product
 	 */
 	protected Product dtoToModel(ProductDto productDto) {
@@ -109,8 +106,7 @@ public class DefaultProductFacade implements ProductFacade {
 	/**
 	 * Model to dto.
 	 *
-	 * @param product
-	 *            the product
+	 * @param product the product
 	 * @return the product dto
 	 */
 	protected ProductDto modelToDto(Product product) {

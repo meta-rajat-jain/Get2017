@@ -23,8 +23,7 @@ public interface ProductFacade {
 	/**
 	 * Gets the product by id.
 	 *
-	 * @param id
-	 *            the id
+	 * @param id the id
 	 * @return the product by id
 	 */
 	ProductDto getProductById(int id);
@@ -32,8 +31,7 @@ public interface ProductFacade {
 	/**
 	 * Delete by id.
 	 *
-	 * @param id
-	 *            the id
+	 * @param id the id
 	 * @return the boolean
 	 */
 	Boolean deleteById(int id);
@@ -41,12 +39,9 @@ public interface ProductFacade {
 	/**
 	 * Save.
 	 *
-	 * @param id
-	 *            the id
-	 * @param name
-	 *            the name
-	 * @param price
-	 *            the price
+	 * @param id the id
+	 * @param name the name
+	 * @param price the price
 	 * @return the product dto
 	 */
 	ProductDto save(int id, String name, double price);
@@ -54,12 +49,9 @@ public interface ProductFacade {
 	/**
 	 * Update.
 	 *
-	 * @param id
-	 *            the id
-	 * @param name
-	 *            the name
-	 * @param price
-	 *            the price
+	 * @param id the id
+	 * @param name the name
+	 * @param price the price
 	 * @return the product dto
 	 */
 	ProductDto update(int id, String name, double price);

@@ -41,8 +41,7 @@ public class ProductDto implements Serializable {
 	/**
 	 * Sets the id.
 	 *
-	 * @param id
-	 *            the new id
+	 * @param id the new id
 	 */
 	public void setId(final int id) {
 		this.id = id;
@@ -60,8 +59,7 @@ public class ProductDto implements Serializable {
 	/**
 	 * Sets the name.
 	 *
-	 * @param name
-	 *            the new name
+	 * @param name the new name
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -79,8 +77,7 @@ public class ProductDto implements Serializable {
 	/**
 	 * Sets the price.
 	 *
-	 * @param price
-	 *            the new price
+	 * @param price the new price
 	 */
 	public void setPrice(double price) {
 		this.price = price;

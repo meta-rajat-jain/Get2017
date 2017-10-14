@@ -7,6 +7,7 @@
 package com.metacube.shoppingcart.dao;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -15,8 +16,9 @@ import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.metacube.shoppingcart.dto.CartDto;
 import com.metacube.shoppingcart.model.Cart;
+import com.metacube.shoppingcart.model.Order;
+import com.metacube.shoppingcart.model.OrderDetail;
 import com.metacube.shoppingcart.model.Product;
 
 /**
@@ -28,8 +30,8 @@ import com.metacube.shoppingcart.model.Product;
  *            the generic type
  */
 public abstract class HibernateDao<T, ID extends Serializable>
-implements
-BaseDao<T, ID> {
+		implements
+			BaseDao<T, ID> {
 
 	/** The session factory. */
 	@Autowired
@@ -94,7 +96,7 @@ BaseDao<T, ID> {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.metacube.shoppingcart.dao.BaseDao#findOne(java.io.Serializable)
 	 */
 	@Override
@@ -107,7 +109,7 @@ BaseDao<T, ID> {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.metacube.shoppingcart.dao.BaseDao#exists(java.io.Serializable)
 	 */
 	@Override
@@ -118,7 +120,7 @@ BaseDao<T, ID> {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.metacube.shoppingcart.dao.BaseDao#delete(java.lang.Object)
 	 */
 	@Override
@@ -178,11 +180,11 @@ BaseDao<T, ID> {
 	}
 
 	@Override
-	public Iterable<CartDto> getAll(final String id) {
+	public Iterable<Cart> getAll(final String id) {
 		Session session = this.sessionFactory.getCurrentSession();
 		Criteria cr = session.createCriteria(getModelClass());
 		cr = cr.add(Restrictions.eq("userId", id));
-		List<CartDto> productList = cr.list();
+		List<Cart> productList = cr.list();
 		return productList;
 	}
 	@Override
@@ -214,4 +216,58 @@ BaseDao<T, ID> {
 		return result;
 
 	}
+	@Override
+	public int saveOrder(String id, Order order) {
+		Session session = this.sessionFactory.getCurrentSession();
+		session.createCriteria(getModelClass());
+		Order ord = new Order();
+		ord.setUserId(id);
+		ord.setDop(new Date());
+		ord.setCardNumber(order.getCardNumber());
+		ord.setCvv(order.getCvv());
+		ord.setAmount(order.getAmount());
+		session.save(ord);
+		System.out.println("getting order id" + ord.getOrderId());
+		return ord.getOrderId();
+
+	}
+
+	@Override
+	public void saveCart(List<Cart> cart, int orderId) {
+		Session session = this.sessionFactory.getCurrentSession();
+		session.createCriteria(getModelClass());
+		OrderDetail ordet = null;
+		for (Cart cartObj : cart) {
+
+			ordet = new OrderDetail();
+
+			ordet.setOrderId(orderId);
+			ordet.setPname(cartObj.getPname());
+			ordet.setPrice(cartObj.getPrice());
+			ordet.setQuantity(1);
+			System.out.println("saving order" + ordet.toString());
+			session.save(ordet);
+		}
+
+	}
+
+	@Override
+	public Iterable<Order> getAllOrder(final String id) {
+		Session session = this.sessionFactory.getCurrentSession();
+		Criteria cr = session.createCriteria(getModelClass());
+		cr = cr.add(Restrictions.eq("userId", id));
+		List<Order> orderList = cr.list();
+		return orderList;
+	}
+
+	@Override
+	public Iterable<OrderDetail> getOrderDetail(final int id) {
+		Session session = this.sessionFactory.getCurrentSession();
+		Criteria cr = session.createCriteria(OrderDetail.class);
+		cr = cr.add(Restrictions.eq("orderId", id));
+		List<OrderDetail> orderList = cr.list();
+		System.out.println("in order List" + orderList.toString());
+		return orderList;
+	}
+
 }

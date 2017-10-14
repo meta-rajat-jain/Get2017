@@ -37,8 +37,7 @@ public class DefaultProductService implements ProductService {
 	/**
 	 * Sets the product dao.
 	 *
-	 * @param productDao
-	 *            the new product dao
+	 * @param productDao the new product dao
 	 */
 	public void setProductDao(ProductDao productDao) {
 		this.productDao = productDao;
@@ -53,8 +52,7 @@ public class DefaultProductService implements ProductService {
 	/**
 	 * Instantiates a new default product service.
 	 *
-	 * @param productDao
-	 *            the product dao
+	 * @param productDao the product dao
 	 */
 	public DefaultProductService(ProductDao productDao) {
 		this.productDao = productDao;

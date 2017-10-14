@@ -23,8 +23,7 @@ public interface ProductService {
 	/**
 	 * Gets the product by id.
 	 *
-	 * @param id
-	 *            the id
+	 * @param id the id
 	 * @return the product by id
 	 */
 	Product getProductById(int id);
@@ -32,8 +31,7 @@ public interface ProductService {
 	/**
 	 * Deletet by id.
 	 *
-	 * @param id
-	 *            the id
+	 * @param id the id
 	 * @return the boolean
 	 */
 	Boolean deletetById(int id);
@@ -41,12 +39,9 @@ public interface ProductService {
 	/**
 	 * Save.
 	 *
-	 * @param id
-	 *            the id
-	 * @param name
-	 *            the name
-	 * @param price
-	 *            the price
+	 * @param id the id
+	 * @param name the name
+	 * @param price the price
 	 * @return the product
 	 */
 	Product save(int id, String name, double price);
@@ -54,12 +49,9 @@ public interface ProductService {
 	/**
 	 * Update.
 	 *
-	 * @param id
-	 *            the id
-	 * @param name
-	 *            the name
-	 * @param price
-	 *            the price
+	 * @param id the id
+	 * @param name the name
+	 * @param price the price
 	 * @return the product
 	 */
 	Product update(int id, String name, double price);

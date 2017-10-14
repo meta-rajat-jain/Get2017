@@ -21,15 +21,7 @@ export class Cart implements OnInit {
     this.cartServices.getCartProducts().then(cartItem => this.cartItem = cartItem);
   }
 
-  checkout(): void{
-    
-      
-      this.cartServices
-          .delete(localStorage.getItem("username"))
-          .then(() => null 
-          );
-        }
-
+  
   deleteFromCart(cart : CartItem){
     for(let i = 0; i < this.cartItem.length; i++){
       if(this.cartItem[i] == cart) {

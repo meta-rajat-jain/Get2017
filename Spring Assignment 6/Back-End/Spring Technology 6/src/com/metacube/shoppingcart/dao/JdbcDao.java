@@ -17,10 +17,8 @@ import java.util.List;
 /**
  * The Class JdbcDao.
  *
- * @param <T>
- *            the generic type
- * @param <ID>
- *            the generic type
+ * @param <T> the generic type
+ * @param <ID> the generic type
  */
 public abstract class JdbcDao<T, ID extends Serializable>
 		implements
@@ -39,8 +37,7 @@ public abstract class JdbcDao<T, ID extends Serializable>
 	/**
 	 * Extract result set row.
 	 *
-	 * @param resultSet
-	 *            the result set
+	 * @param resultSet the result set
 	 * @return the t
 	 */
 	protected abstract T extractResultSetRow(ResultSet resultSet);

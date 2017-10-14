@@ -8,12 +8,14 @@ package com.metacube.shoppingcart.dao.product;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import org.springframework.stereotype.Component;
 
 import com.metacube.shoppingcart.dao.JdbcDao;
-import com.metacube.shoppingcart.dto.CartDto;
 import com.metacube.shoppingcart.model.Cart;
+import com.metacube.shoppingcart.model.Order;
+import com.metacube.shoppingcart.model.OrderDetail;
 import com.metacube.shoppingcart.model.Product;
 
 /**
@@ -30,8 +32,7 @@ ProductDao {
 	/**
 	 * Sets the table name.
 	 *
-	 * @param tableName
-	 *            the new table name
+	 * @param tableName the new table name
 	 */
 	public void setTableName(String tableName) {
 		this.tableName = tableName;
@@ -115,18 +116,27 @@ ProductDao {
 		return null;
 	}
 
+	/* (non-Javadoc)
+	 * @see com.metacube.shoppingcart.dao.BaseDao#getOne(java.lang.String)
+	 */
 	@Override
 	public Product getOne(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	/* (non-Javadoc)
+	 * @see com.metacube.shoppingcart.dao.BaseDao#getAll(java.lang.String)
+	 */
 	@Override
-	public Iterable<CartDto> getAll(final String id) {
+	public Iterable<Cart> getAll(final String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	/* (non-Javadoc)
+	 * @see com.metacube.shoppingcart.dao.BaseDao#addToCart(java.lang.String, double, int, java.lang.String)
+	 */
 	@Override
 	public Cart addToCart(String pname, double price, int productId,
 			String userId) {
@@ -134,10 +144,49 @@ ProductDao {
 		return null;
 	}
 
+	/* (non-Javadoc)
+	 * @see com.metacube.shoppingcart.dao.BaseDao#deleteFromCart(java.lang.String)
+	 */
 	@Override
 	public boolean deleteFromCart(String username) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.metacube.shoppingcart.dao.BaseDao#saveOrder(java.lang.String, com.metacube.shoppingcart.model.Order)
+	 */
+	@Override
+	public int saveOrder(String id, Order order) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.metacube.shoppingcart.dao.BaseDao#saveCart(java.util.List, int)
+	 */
+	@Override
+	public void saveCart(List<Cart> cart, int orderId) {
+		// TODO Auto-generated method stub
+
+	}
+
+	/* (non-Javadoc)
+	 * @see com.metacube.shoppingcart.dao.BaseDao#getAllOrder(java.lang.String)
+	 */
+	@Override
+	public Iterable<Order> getAllOrder(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.metacube.shoppingcart.dao.BaseDao#getOrderDetail(int)
+	 */
+	@Override
+	public Iterable<OrderDetail> getOrderDetail(int id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	/*

@@ -10,6 +10,9 @@ import { GetProductDetailComponent } from './get-product-detail.component';
 import { Cart } from './Cart';
 import { Checkout } from './checkout';
 import { LoginComponent } from './login-component';
+import { PaymentComponent } from './payment.component';
+import { OrderComponent } from './order.component';
+import { OrderDetailComponent } from './orderDetail.component';
 
 const routes: Routes = [
   { path: '', component:LoginComponent},
@@ -20,7 +23,10 @@ const routes: Routes = [
   { path: 'addProduct', component: AddProductComponent },
   { path: 'getProductDetail/:id', component: GetProductDetailComponent },
   { path: 'cart', component: Cart },
-  { path: 'checkout', component: Checkout }
+  { path: 'checkout', component: Checkout },
+  { path: 'payment', component: PaymentComponent },
+  { path: 'order', component:OrderComponent},
+  { path: 'orderDetail/:orderId', component:OrderDetailComponent}
 
 ];
 

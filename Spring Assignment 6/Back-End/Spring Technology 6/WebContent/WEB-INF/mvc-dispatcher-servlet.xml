@@ -12,6 +12,7 @@
 	<alias name="hibernateProductDao" alias="productDao" />
 	<alias name="hibernateUserDao" alias="userDao"/>
 	<alias name="hibernateCartDao" alias="cartDao"/>
+	<alias name="hibernateOrderDao" alias="orderDao"/>
 	
 	<tx:annotation-driven transaction-manager="transactionManager"/>
 	

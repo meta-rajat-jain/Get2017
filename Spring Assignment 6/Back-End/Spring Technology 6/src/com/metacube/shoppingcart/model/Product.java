@@ -19,7 +19,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "product")
 public class Product {
-	
+
 	/** The id. */
 	@Id
 	@Column(name = "id")
@@ -34,6 +34,9 @@ public class Product {
 	@Column(name = "price")
 	private double price;
 
+	@Column(name = "source")
+	private String source;
+
 	/**
 	 * Gets the id.
 	 *
@@ -42,16 +45,17 @@ public class Product {
 	public int getId() {
 		return id;
 	}
-	
+
 	/**
 	 * Sets the id.
 	 *
-	 * @param id the new id
+	 * @param id
+	 *            the new id
 	 */
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+
 	/**
 	 * Gets the name.
 	 *
@@ -60,16 +64,17 @@ public class Product {
 	public String getName() {
 		return name;
 	}
-	
+
 	/**
 	 * Sets the name.
 	 *
-	 * @param name the new name
+	 * @param name
+	 *            the new name
 	 */
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	/**
 	 * Gets the price.
 	 *
@@ -78,14 +83,23 @@ public class Product {
 	public double getPrice() {
 		return price;
 	}
-	
+
 	/**
 	 * Sets the price.
 	 *
-	 * @param price the new price
+	 * @param price
+	 *            the new price
 	 */
 	public void setPrice(double price) {
 		this.price = price;
+	}
+
+	public String getSource() {
+		return source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
 	}
 
 }

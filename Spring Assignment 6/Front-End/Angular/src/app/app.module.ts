@@ -19,7 +19,10 @@ import { GetProductDetailComponent } from './get-product-detail.component';
 import { CartService } from './cart-service';
 import { LoginService} from './login-service.service';
 import { Checkout } from './checkout';
-
+import { PaymentComponent } from './payment.component';
+import { OrderComponent } from './order.component';
+import { OrderService } from './order.service';
+import { OrderDetailComponent } from './orderDetail.component';
 
 @NgModule({
   imports: [
@@ -39,10 +42,13 @@ import { Checkout } from './checkout';
     AddProductComponent,
     GetProductDetailComponent,
     LoginComponent,
-    Checkout
+    Checkout,
+    PaymentComponent,
+    OrderComponent,
+    OrderDetailComponent
     
   ],
-  providers: [ ProductService, CartService,LoginService ],
+  providers: [ ProductService, CartService,LoginService,OrderService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
